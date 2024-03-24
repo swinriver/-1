@@ -7,7 +7,7 @@ int main()
 {
 	char  board[3][3];
 	int x, y, k, i, j = 0;
-	for (x = 0; x < 3; x++)
+	for (x = 0; x < 3; x++)// 초기화
 		for (y = 0; y < 3; y++) 
 			board[x][y] = ' ';
 
@@ -17,13 +17,13 @@ int main()
 		cin >> x >> y;
 		board[x][y] = (k % 2 == 0) ? 'X' : 'O';
 		//0 x|1 o|2 x|3 o|4 x|5 o|6 x|7 o| 8 x|
-		for (i = 0; i < 3; i++)
+		for (i = 0; i < 3; i++)  //틱텍톡 판 출력
 		{
 			cout << "---|---|---|" << endl;
 			cout << board[i][0] << "  |" << board[i][1] << "  | " << board[i][2] << endl;
 		}
-
 		cout << "---|---|---|" << endl;
+		
 		for (i = 0; i < 3; i++)
 		{
 			if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] != ' ') //0 1 2, 3 4 5, 6 7 8 3가지
@@ -48,9 +48,10 @@ int main()
 			cout << board[0][2] << " 승리" << endl;
 			j = 1;
 		}
-		if (j == 1)
+		//
+		if (j == 1)//승리후 반복 정지
 			break;
-		if (k == 8)
+		if (k == 8)//무승부
 		{
 			cout << "무승부" << endl;
 		}
