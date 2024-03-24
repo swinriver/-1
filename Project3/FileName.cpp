@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	char  board[3][3];
-	int x, y, k, i, j;
+	int x, y, k, i, j=0;
 	for (x = 0; x < 3; x++)
 		for (y = 0; y < 3; y++) board[x][y] = '  ';
 
@@ -21,29 +21,32 @@ int main()
 			cout << board[i][0] << "  |" << board[i][1] << "  | " << board[i][2] << endl;
 		}
 		cout << "---|---|---|" << endl;
-		for (j = 0; j < 3; j++)
+		for (i = 0; i < 3; i++)
 		{
-			if (board[j][0] == board[j][1] && board[j][1] == board[j][2] && board[j][0] != '  ') //0 1 2, 3 4 5, 6 7 8 3가지
+			if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] != '  ') //0 1 2, 3 4 5, 6 7 8 3가지
 			{
-				cout << board[j][0] << "승리" << endl;
-				break;
+				cout << board[i][0] << "승리" << endl;
+				j=1;
 			}
-			if (board[0][j] == board[1][j] && board[1][j] == board[2][j] && board[0][j] != '  ')//0 3 6, 1 4 7, 2 5 8 3가지
+			if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] != '  ')//0 3 6, 1 4 7, 2 5 8 3가지
 			{
-				cout << board[0][j] << "승리" << endl;
-				break;
+				cout << board[0][i] << "승리" << endl;
+				j=1;
 			}
+		}
+		
 			if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != '  ')// 0 4 8 1가지
 			{
 				cout << board[0][0] << "승리" << endl;
-				break;
+				j=1;
 			}
 			if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != '  ') //2 4 6 1가지
 			{
 				cout << board[0][2] << "승리" << endl;
-				break;
+				j=1;
 			}
-		}
+		if(j==1)
+			break;
 		if (k == 8)
 		{
 			cout << "무승부" << endl;
