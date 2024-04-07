@@ -22,21 +22,25 @@ void TicTacToe::printBoard()
 }
 void TicTacToe::input(int x, int y, int k)
 {
-    while (1) {
+    while (1) 
+    {
         // 범위 확인
-        if (x < 0 || x > 2 || y < 0 || y > 2) {
+        if (x < 0 || x > 2 || y < 0 || y > 2) 
+        {
             cout << "잘못된 입력입니다. 좌표는 0부터 2까지 입력해주세요." << endl;
-            // 다시 입력 받기
+                // 다시 입력 받기
             cout << "(x,y) 좌표 : ";
             cin >> x >> y;
         }
-        else if (board[x][y] != ' ') {
+        else if (board[x][y] != ' ')
+        {
             cout << "이미 선택된 위치입니다. 다른 위치를 선택해주세요." << endl;
-            // 다시 입력 받기
+                // 다시 입력 받기
             cout << "(x,y) 좌표 : ";
             cin >> x >> y;
         }
-        else {
+        else 
+        {
             // 유효한 입력일 경우에만 반복문 나감
             break;
         }
