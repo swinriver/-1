@@ -4,6 +4,7 @@
 using namespace std;
 void calculator::menu()
 {
+	sum = 0;
 	while(1)
 	{
 		sum = 0;
