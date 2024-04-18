@@ -2,32 +2,59 @@
 #include <iostream>
 #include <string>
 using namespace std;
-void calculator::menu(double x=0, double y=0, double sum=0, char oper='0')
+void calculator::menu()
 {
 	while(1)
 	{
+		sum = 0;
+			cout << "+" << endl;
+			cout << "-" << endl;
+			cout << "*" << endl;
+			cout << "/" << endl;
+			cout << "C입력시 초기화" << endl;
+			cout << "Q입력시 종료" << endl;
+			cout << "연산자를 고르시오" << endl;
+			cin >> oper;
+			if (oper == 'Q')
+				break;
+			if (sum != 0)
+			{
+				cout << sum << endl;
+				cout << "y의 값을 입력하시오" << endl;
+				cin >> y;
+				x = sum;
+			}
+			if (sum == 0)
+			{
+				cout << "x의 값을 입력하시오" << endl;
+				cin >> x;
+				cout << "y의 값을 입력하시오" << endl;
+				cin >> y;
+			}
+
+		
 		switch (oper)
 		{
 		case '+':
-			add(x, y, oper, sum);
+			add();
 			break;
 		case '-':
-			sub(x, y, oper, sum);
+			sub();
 			break;
 		case '*':
-			mul(x, y, oper, sum);
+			mul();
 			break;
 		case '/':
-			di(x, y, oper, sum);
+			di();
 			break;
 		case 'C':
-			C(x, y, sum);
+			C();
 			break;
 		case 'Q':
 			break;
 		default:
 		{
-			cout << "�����ڸ� �ٽ� �����ÿ�" << endl;
+			cout << "연산자를 다시 고르시오" << endl;
 			continue;
 		}
 		}
@@ -35,30 +62,30 @@ void calculator::menu(double x=0, double y=0, double sum=0, char oper='0')
 	}
 }
 
-void calculator::add(double x, double y,char oper, double sum)
+void calculator::add()
 {
 	cout << x << oper << y << " = " << x + y << endl;
 	sum = x + y;
 }
-void calculator::sub(double x, double y,char oper, double sum)
+void calculator::sub()
 {
 	cout << x << oper << y << " = " << x - y << endl;
 	sum = x - y;
 }
 
-void calculator::mul(double x, double y,char oper, double sum)
+void calculator::mul()
 {
 	cout << x << oper << y << " = " << x * y << endl;
 	sum = x * y;
 }
 
-void calculator::di(double x, double y,char oper, double sum)
+void calculator::di()
 {
 	cout << x << oper << y << " = " << x / y << endl;
 	sum =x / y;
 }
  
-void calculator::C(double x, double y,double sum)
+void calculator::C()
 {
 	x = 0, y = 0 ,sum=0;
 }
