@@ -9,16 +9,16 @@ private:
 	double x, y, sum;
 	char oper;
 public:
-	void menu(double x, double y, double sum, char oper);
+	void menu();
 
-	void add(double x, double y, char oper,double sum);
+	void add();
 	
-	void sub(double x, double y, char oper,double sum);
+	void sub();
 	
-	void mul(double x, double y, char oper,double sum);
+	void mul();
 
-	void di(double x, double y, char oper, double sum);
+	void di();
 	
-	void C(double x, double , double sum);
+	void C();
 
 };
