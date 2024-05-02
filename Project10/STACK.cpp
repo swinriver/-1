@@ -6,7 +6,10 @@ int stack[10];
 // 수정 후: 스택의 크기를 나타내는 상수를 정의합니다.
 #define STACK_SIZE 10
 
-void stack(){ clear(); }
+void Stack() { 
+    for (int i = 0; i < STACK_SIZE; i++)
+        stack[i] = NULL;
+}
 
 // 수정 전: isEmpty 함수는 비어있는지 확인하는 함수로서 반환형이 void로 선언되어 있습니다.
 // 반환형을 int로 변경하고 스택이 비어있는지 여부를 반환하도록 수정합니다.
@@ -20,8 +23,8 @@ int isEmpty() {
 
 // 수정 전: push 함수 내의 if 문에서 할당 연산자(=)를 비교 연산자(==)로 바꿔야 합니다.
 void push(int e) {
-        printf("입력\n");
-        scanf_s("%d",&e);
+    printf("입력\n");
+    scanf_s("%d", &e);
     for (int i = 0; i < STACK_SIZE; i++) {
         if (stack[i] == NULL) { // 수정: 할당 연산자를 비교 연산자로 변경합니다.
             stack[i] = e;
@@ -86,4 +89,18 @@ void size() {
 void clear() {
     for (int i = 0; i < STACK_SIZE; i++)
         stack[i] = NULL;
+}
+
+int main() {
+    clear();
+    push(1);
+    push(2);
+    push(3);
+    push(4);
+    push(5);
+    printf("peek: %d\n", peek());
+    printf("pop: %d\n", pop());
+    printf("peek: %d\n", peek());
+    size();
+    return 0;
 }
