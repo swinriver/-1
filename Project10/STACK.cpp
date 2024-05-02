@@ -23,6 +23,8 @@ int isEmpty() {
 
 // 수정 전: push 함수 내의 if 문에서 할당 연산자(=)를 비교 연산자(==)로 바꿔야 합니다.
 void push(int e) {
+        printf("입력\n");
+        scanf_s("%d",&e);
     for (int i = 0; i < STACK_SIZE; i++) {
         if (stack[i] == NULL) { // 수정: 할당 연산자를 비교 연산자로 변경합니다.
             stack[i] = e;
