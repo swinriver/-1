@@ -6,10 +6,7 @@ int stack[10];
 // 수정 후: 스택의 크기를 나타내는 상수를 정의합니다.
 #define STACK_SIZE 10
 
-void stack(){
-for(int i=0; i<10; i++)
-        stack[i]=NULL;
-}
+void stack(){ clear(); }
 
 // 수정 전: isEmpty 함수는 비어있는지 확인하는 함수로서 반환형이 void로 선언되어 있습니다.
 // 반환형을 int로 변경하고 스택이 비어있는지 여부를 반환하도록 수정합니다.
