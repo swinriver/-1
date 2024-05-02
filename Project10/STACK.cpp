@@ -41,7 +41,7 @@ int pop() {
         a = stack[0];
         stack[0] = NULL;
     }
-    for (int i = 0; i < STACK_SIZE; i++) {
+    for (int i = 1; i < STACK_SIZE; i++) {
         if (stack[i] == NULL) {
             a = stack[i - 1];
             stack[i - 1] = NULL;
