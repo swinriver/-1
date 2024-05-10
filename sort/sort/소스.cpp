@@ -7,117 +7,117 @@ using namespace std;
 int main()
 {
 
-	//¼±ÅÃ Á¤·Ä
-	srand(time(NULL));
-	int a[5];
+//ì„ íƒ ì •ë ¬
+srand(time(NULL));
+int a[5];
 
-	//5°³ ·£´ı º¯¼ö ¸¸µé±â
-	for (int i = 0; i < 5; i++) {
-		a[i] = rand() % 50 + 1;
-	}
-
-	//Á¤·Ä Àü Ãâ·Â
-	cout << "¼±ÅÃ Á¤·Ä Àü ÀÔ·Â" << endl;
-	for (int i = 0; i < 5; i++) {
-		printf("%d\t", a[i]);
-	}
+//5ê°œ ëœë¤ ë³€ìˆ˜ ë§Œë“¤ê¸°
+for (int i = 0; i < 5; i++) {
+	a[i] = rand() % 50 + 1;
+}
+	
+//ì •ë ¬ ì „ ì¶œë ¥
+cout << "ì„ íƒ ì •ë ¬ ì „ ì…ë ¥" <<endl;
+for (int i = 0; i < 5; i++) {
+	printf("%d\t", a[i]);
+}
 	cout << endl;
-
-	//¼±ÅÃ Á¤·Ä
-	for (int i = 0; i < 5; i++)
+	
+//ì„ íƒ ì •ë ¬
+for (int i = 0; i < 5; i++) 
+{
+	int n = i;
+	for (int j = i + 1; j < 5; j++) 
 	{
-		int n = i;
-		for (int j = i + 1; j < 5; j++)
+		if (a[j] < a[n])
 		{
-			if (a[j] < a[n])
-			{
-				n = j;
-			}
+			n = j;
 		}
+	}
 		if (n != i)
-		{
-			for (int j = 0; j < 5; j++)
-			{
-				int temp = a[i];
-				a[i] = a[n];
-				a[n] = temp;
-			}
-		}
-	}
-	//Á¤·Ä ÈÄ Ãâ·Â
-	cout << "¼±ÅÃ Á¤·Ä ÈÄ ÀÔ·Â" << endl;
-	for (int i = 0; i < 5; i++) {
-		printf("%d\t", a[i]);
-	}
-	cout << endl;
-	//»ğÀÔ Á¤·Ä
-
-	//5°³ ·£´ı º¯¼ö ¸¸µé±â
-	for (int i = 0; i < 5; i++) {
-		a[i] = rand() % 50 + 1;
-	}
-
-	//Á¤·Ä Àü Ãâ·Â
-	cout << "»ğÀÔ Á¤·Ä Àü ÀÔ·Â" << endl;
-	for (int i = 0; i < 5; i++) {
-		printf("%d\t", a[i]);
-	}
-	cout << endl;
-
-	//»ğÀÔ Á¤·Ä
-	for (int i = 1; i < 5; i++)
 	{
-		for (int j = 0; j < i; j++)
+		for (int j = 0; j < 5; j++) 
 		{
-			if (a[i] < a[j])
-			{
-				int key = a[i];
-				a[i] = a[j];
-				a[j] = key;
-			}
+			int temp = a[i];
+			a[i] = a[n];
+			a[n] = temp;
 		}
 	}
+}
+//ì •ë ¬ í›„ ì¶œë ¥
+cout << "ì„ íƒ ì •ë ¬ í›„ ì…ë ¥" <<endl;
+for (int i = 0; i < 5; i++) {
+	printf("%d\t", a[i]);
+}
+cout << endl;
+//ì‚½ì… ì •ë ¬
 
-	//Á¤·Ä ÈÄ Ãâ·Â
-	cout << "»ğÀÔ Á¤·Ä ÈÄ ÀÔ·Â" << endl;
-	for (int i = 0; i < 5; i++) {
-		printf("%d\t", a[i]);
-	}
-	cout << endl;
-	//¹öºí Á¤·Ä
+//5ê°œ ëœë¤ ë³€ìˆ˜ ë§Œë“¤ê¸°
+for (int i = 0; i < 5; i++) {
+	a[i] = rand() % 50 + 1;
+}
 
-	//5°³ ·£´ı º¯¼ö¸¸µé±â
-	for (int i = 0; i < 5; i++) {
-		a[i] = rand() % 50 + 1;
-	}
+//ì •ë ¬ ì „ ì¶œë ¥
+cout << "ì‚½ì… ì •ë ¬ ì „ ì…ë ¥" <<endl;
+for (int i = 0; i < 5; i++) {
+	printf("%d\t", a[i]);
+}
+cout << endl;
 
-	//Á¤·Ä Àü Ãâ·Â
-	cout << "¹öºí Á¤·Ä Àü ÀÔ·Â" << endl;
-	for (int i = 0; i < 5; i++) {
-		printf("%d\t", a[i]);
-	}
-	cout << endl;
-
-	//¹öºí Á¤·Ä 
-	for (int i = 0; i < 5; i++)
+//ì‚½ì… ì •ë ¬
+for (int i = 1; i < 5; i++)
+{
+	for (int j = 0; j < i; j++) 
 	{
-		for (int j = 1; j < 5 - i; j++)
+		if (a[i] < a[j])
 		{
-			if (a[j - 1] > a[j])
-			{
-				int key = a[j - 1];
-				a[j - 1] = a[j];
-				a[j] = key;
-			}
+			int key = a[i];
+			a[i] = a[j];
+			a[j] = key;
 		}
 	}
+}
 
-	//Á¤·Ä ÈÄ Ãâ·Â
-	cout << "¹öºí Á¤·Ä ÈÄ ÀÔ·Â" << endl;
-	for (int i = 0; i < 5; i++) {
-		printf("%d\t", a[i]);
+//ì •ë ¬ í›„ ì¶œë ¥
+cout << "ì‚½ì… ì •ë ¬ í›„ ì…ë ¥" <<endl;
+for (int i = 0; i < 5; i++) {
+	printf("%d\t", a[i]);
+}
+cout << endl;
+//ë²„ë¸” ì •ë ¬
+
+//5ê°œ ëœë¤ ë³€ìˆ˜ë§Œë“¤ê¸°
+for (int i = 0; i < 5; i++) {
+	a[i] = rand() % 50 + 1;
+}
+	
+//ì •ë ¬ ì „ ì¶œë ¥
+cout << "ë²„ë¸” ì •ë ¬ ì „ ì…ë ¥" <<endl;
+for (int i = 0; i < 5; i++) {
+	printf("%d\t", a[i]);
+}
+cout << endl;
+	
+//ë²„ë¸” ì •ë ¬ 
+for (int i = 0; i < 5; i++)
+{
+	for (int j = 1; j < 5 - i; j++)
+	{
+		if (a[j-1] > a[j])
+		{
+			int key = a[j-1];
+			a[j-1] = a[j];
+			a[j] = key;
+		}
 	}
-	cout << endl;
+}
+	
+//ì •ë ¬ í›„ ì¶œë ¥
+cout << "ë²„ë¸” ì •ë ¬ í›„ ì…ë ¥" <<endl;
+for (int i = 0; i < 5; i++) {
+	printf("%d\t", a[i]);
+}
+cout << endl;
 
-
+	
 }
