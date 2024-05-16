@@ -46,7 +46,7 @@ void Queue::enqueue(int c)
 		showQueueData();
 		return;
 	}
-	if (rear == front)
+	if (rear==front==9)
 	{
 		rear = -1, front = -1;
 	}
