@@ -20,14 +20,14 @@ void Queue::queue()
 	{
 		Q[i] = NULL;
 	}
-	cout << "Å¥ »ý¼º\nfront : \n" << front << "rear : " << rear << endl;
+	cout << "í ìƒì„±\nfront : \n" << front << "rear : " << rear << endl;
 }
 int Queue::isEmpty()
 {
 	if (front == rear)
-		return true; //ºñ¾îÀÖÀ½
+		return true; //ë¹„ì–´ìžˆìŒ
 	else
-		return false; //¾È ºñ¾îÀÖÀ½
+		return false; //ì•ˆ ë¹„ì–´ìžˆìŒ
 
 }
 void Queue::showQueueData() {
@@ -35,18 +35,23 @@ void Queue::showQueueData() {
 	for (int i = front + 1; i <= rear; i++) {
 		printf("%d ", Q[i]);
 	}
+	printf("front=%d , rear=%d\n", front, rear);
 }
 
 void Queue::enqueue(int c)
 {
 	if (rear-front == size) 
 	{
-		cout << "Æ÷È­»óÅÂ" << endl;
+		cout << "í¬í™”ìƒíƒœ" << endl;
 		showQueueData();
 		return;
-	}	 
+	}
+	if (rear == front)
+	{
+		rear = -1, front = -1;
+	}
 	rear += 1;
-	cout << "\nµÚ·Î º¸³¾ ¼ýÀÚ¸¦ ÀûÀ¸½Ã¿À" << endl;
+	cout << "\në’¤ë¡œ ë³´ë‚¼ ìˆ«ìžë¥¼ ì ìœ¼ì‹œì˜¤" << endl;
 	cin >> c;
 	Q[rear] = c;
 	showQueueData();
@@ -55,7 +60,7 @@ void Queue::dequeue()
 {
 	if (isEmpty())
 	{
-		cout << "Å¥°¡ ºñ¾î ÀÖ½À´Ï´Ù." << endl;
+		cout << "íê°€ ë¹„ì–´ ìžˆìŠµë‹ˆë‹¤." << endl;
 		return;
 	}
 		front += 1;
@@ -77,6 +82,15 @@ int main() {
 	q.enqueue(10);
 	q.dequeue();
 	q.dequeue();
+	q.dequeue();
+	q.dequeue();
+	q.dequeue();
+	q.dequeue();
+	q.dequeue();
+	q.dequeue();
+	q.dequeue();
+	q.dequeue();
+	q.enqueue(1);
 	return 0;
 }
 
