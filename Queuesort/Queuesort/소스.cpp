@@ -16,7 +16,7 @@ public:
 };
 void Queue::queue()
 {
-	for (int i = 0; i < size; i++) 
+	for (int i = 0; i < size; i++)
 	{
 		Q[i] = NULL;
 	}
@@ -40,16 +40,20 @@ void Queue::showQueueData() {
 
 void Queue::enqueue(int c)
 {
-	if (rear-front == size) 
+	if (rear - front == size)
 	{
 		cout << "포화상태" << endl;
 		showQueueData();
 		return;
 	}
-	if (rear==front==9)
-	{
-		rear = -1, front = -1;
+	if (rear == size - 1) {   //가짜 포화 상태
+		int j = front + 1;
+		for (int i = 0; i < rear - front; i++) {
+			Q[i] = Q[i + j];
+		}
+		rear = rear - j;    front = -1;
 	}
+
 	rear += 1;
 	cout << "\n뒤로 보낼 숫자를 적으시오" << endl;
 	cin >> c;
@@ -63,10 +67,10 @@ void Queue::dequeue()
 		cout << "큐가 비어 있습니다." << endl;
 		return;
 	}
-		front += 1;
-		cout <<"\n"<< Q[front] << endl;
-		Q[front] = NULL;
-		showQueueData();
+	front += 1;
+	cout << "\n" << Q[front] << endl;
+	Q[front] = NULL;
+	showQueueData();
 }
 int main() {
 	Queue q;
